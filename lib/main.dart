@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp_ui/constant.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:foodapp_ui/details_screen.dart';
 import 'package:foodapp_ui/widgets/category_title.dart';
 import 'package:foodapp_ui/widgets/food_card.dart';
 
@@ -85,17 +86,45 @@ class HomeScreen extends StatelessWidget {
             child: SvgPicture.asset("assets/icons/search.svg"),
           ),
           SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
             child: Row(
               children: [
                 FoodCard(
-                  press: () {},
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const DetailsScreen();
+                      }),
+                    );
+                  },
                   title: "Vegan salad bowl",
                   image: "assets/images/image_1.png",
                   price: 20,
                   calories: "420Kcal",
                   description:
                       "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. ",
-                )
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                FoodCard(
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const DetailsScreen();
+                      }),
+                    );
+                  },
+                  title: "Vegan salad bowl",
+                  image: "assets/images/image_2.png",
+                  price: 20,
+                  calories: "420Kcal",
+                  description:
+                      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. ",
+                ),
+                const SizedBox(width: 20),
               ],
             ),
           )

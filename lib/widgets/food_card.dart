@@ -8,7 +8,7 @@ class FoodCard extends StatelessWidget {
   final int price;
   final String calories;
   final String description;
-  final Function press;
+  final VoidCallback press;
 
   const FoodCard(
       {super.key,
@@ -22,7 +22,8 @@ class FoodCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {},
+        onTap: press,
+        // ignore: avoid_unnecessary_containers
         child: Container(
           child: Stack(
             children: [
@@ -75,7 +76,7 @@ class FoodCard extends StatelessWidget {
               Positioned(
                 top: 201,
                 left: 40,
-                child: Container(
+                child: SizedBox(
                   width: 210,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
