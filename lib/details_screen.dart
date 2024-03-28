@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_svg/svg.dart';
 import 'package:foodapp_ui/constant.dart';
 
@@ -33,8 +34,8 @@ class DetailsScreen extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(vertical: 30),
               padding: const EdgeInsets.all(6),
-              height: 305,
-              width: 305,
+              height: MediaQuery.of(context).size.width * 0.4,
+              width: MediaQuery.of(context).size.width * 0.4,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: kSecondaryColor,
@@ -77,8 +78,10 @@ class DetailsScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-            const Text(
-              "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
+            const SingleChildScrollView(
+              child: Text(
+                "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
+              ),
             ),
             const Spacer(),
             Padding(
